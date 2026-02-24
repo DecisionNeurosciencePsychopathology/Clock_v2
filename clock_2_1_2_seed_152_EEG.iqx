@@ -6,7 +6,6 @@
 / txbgcolor = (128,128,128)
 / txcolor = (0, 0, 0)
 / screencolor = (128,128,128)
-/ combaudrates = (COM4 = 115200)
 </defaults>
 
 <parameters>
@@ -18,41 +17,6 @@
 / seed = 152;
 </parameters>
 
-<port sendtrialstart>
-/ port = COM4
-/ items = (10)
-/ subport = data
-</port>
-
-<port sendprefreeze>
-/ port = COM4
-/ items = (15)
-/ subport = data
-</port>
-
-<port sendISI>
-/ port = COM4
-/ items = (20)
-/ subport = data
-</port>
-
-<port sendfeedback>
-/ port = COM4
-/ items = (30)
-/ subport = data
-</port>
-
-<port sendITI>
-/ port = COM4
-/ items = (40)
-/ subport = data
-</port>
-
-<port allbitstolow>
-/ port = COM4
-/ subport = data
-/ items = (0)
-</port>
 
 <usermanual>
     For background see:
@@ -1605,13 +1569,12 @@ number of mushrooms anywhere on the planet.")
 ]
 
 / stimulustimes = [
-	0 = sendITI, fixationCross, dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10,
+	0 = fixationCross, dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10,
 		dot11, dot12, dot13, dot14, dot15, dot16, dot17, dot18, dot19, dot20,
 		dot21, dot22, dot23, dot24, dot25, dot26, dot27, dot28, dot29, dot30,
 		dot31, dot32, dot33, dot34, dot35, dot36, dot37, dot38, dot39, dot40,
 		dot41, dot42, dot43, dot44, dot45, dot46, dot47, dot48, dot49, dot50,
 		dot51, dot52, dot53, dot54, dot55, dot56, dot57, dot58, dot59, dot60;
-	33 = allbitstolow;
 ]
 / ontrialend = [
 ]
@@ -1782,13 +1745,12 @@ number of mushrooms anywhere on the planet.")
 	values.freeze_start = script.elapsedtime;
 ]
 
-/ stimulustimes = [ 0 = sendprefreeze, planet, stim, dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10,
+/ stimulustimes = [ 0 = planet, stim, dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10,
 					dot11, dot12, dot13, dot14, dot15, dot16, dot17, dot18, dot19, dot20,
 					dot21, dot22, dot23, dot24, dot25, dot26, dot27, dot28, dot29, dot30,
 					dot31, dot32, dot33, dot34, dot35, dot36, dot37, dot38, dot39, dot40,
 					dot41, dot42, dot43, dot44, dot45, dot46, dot47, dot48, dot49, dot50,
 					dot51, dot52, dot53, dot54, dot55, dot56, dot57, dot58, dot59, dot60, frozenShip;
-					33 = allbitstolow;
 ]
 / timeout = list.preClockFreeze.nextvalue;
 / recorddata = false
@@ -1806,13 +1768,12 @@ number of mushrooms anywhere on the planet.")
 ]
 
 / stimulustimes = [
-	0 = sendtrialstart,animatedCircle, stim, dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10,
+	0 = animatedCircle, stim, dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10,
 		dot11, dot12, dot13, dot14, dot15, dot16, dot17, dot18, dot19, dot20,
 		dot21, dot22, dot23, dot24, dot25, dot26, dot27, dot28, dot29, dot30,
 		dot31, dot32, dot33, dot34, dot35, dot36, dot37, dot38, dot39, dot40,
 		dot41, dot42, dot43, dot44, dot45, dot46, dot47, dot48, dot49, dot50,
 		dot51, dot52, dot53, dot54, dot55, dot56, dot57, dot58, dot59, dot60;
-	33 = allbitstolow;
 ]
 / timeout = values.timeout;
 / validresponse = (" ") 
@@ -1899,13 +1860,12 @@ number of mushrooms anywhere on the planet.")
 	shape.dot60.erase = true;
 	values.ISI_start = script.elapsedtime;
 ]
-/ stimulustimes = [0 = sendISI, stim, planet, dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10,
+/ stimulustimes = [0 = stim, planet, dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10,
 dot11, dot12, dot13, dot14, dot15, dot16, dot17, dot18, dot19, dot20,
 dot21, dot22, dot23, dot24, dot25, dot26, dot27, dot28, dot29, dot30,
 dot31, dot32, dot33, dot34, dot35, dot36, dot37, dot38, dot39, dot40,
 dot41, dot42, dot43, dot44, dot45, dot46, dot47, dot48, dot49, dot50,
 dot51, dot52, dot53, dot54, dot55, dot56, dot57, dot58, dot59, dot60, frozenShip;
-33 = allbitstolow;
 ]
 / timeout = list.ISI.nextvalue;
 / recorddata = false
@@ -1983,8 +1943,7 @@ dot51, dot52, dot53, dot54, dot55, dot56, dot57, dot58, dot59, dot60, frozenShip
 	values.feedback_start = script.elapsedtime;
 ]
 / stimulustimes = [
-	0 = sendfeedback,feedback3, feedback2, text.feedback1;
-	33 = allbitstolow;
+	0 = feedback3, feedback2, text.feedback1;
 ]
 / trialduration = 699
 // correctresponse = (next) // testing only
@@ -2277,13 +2236,12 @@ dot51, dot52, dot53, dot54, dot55, dot56, dot57, dot58, dot59, dot60, presscont;
 	values.ITI_start = script.elapsedtime;
 ]
 / stimulustimes = [
-	0 = sendITI, fixationCross, dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10,
+	0 = fixationCross, dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9, dot10,
 		dot11, dot12, dot13, dot14, dot15, dot16, dot17, dot18, dot19, dot20,
 		dot21, dot22, dot23, dot24, dot25, dot26, dot27, dot28, dot29, dot30,
 		dot31, dot32, dot33, dot34, dot35, dot36, dot37, dot38, dot39, dot40,
 		dot41, dot42, dot43, dot44, dot45, dot46, dot47, dot48, dot49, dot50,
 		dot51, dot52, dot53, dot54, dot55, dot56, dot57, dot58, dot59, dot60;
-	33 = allbitstolow;
 ]
 / recorddata = true
 / trialduration = 499
