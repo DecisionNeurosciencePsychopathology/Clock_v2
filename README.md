@@ -1,0 +1,7 @@
+2026-02-27 Andrew Papale
+Clock_v2 ReadMe
+
+The clock task v2 is an updated version of the classic clock task developed in Michael Frank's lab and cited in the literature including with works in DNPL.  The goals of developing the new version were 1) separate response time from the value distribution 2) include a manipulation for local uncertainty that was orthogonalized with the classic manipulation of global uncertainty (entropy) that has been the focus of prior research.  The literature suggests that local uncertainty is an important factor that should be considered in decision making, etc.  Minor improvements include adding a "story" to the task and "gamifying" it to some extent, but these should have little impact on the core experimental manipulations.  The programmer for Inquisit help (Dave) was instrumental in writing the piece of code that does the 2D spline interpolation and should probably be credited in publications (I don't know his full name).
+
+The initial commits to this repo include version of the task that closely mirror the original clock task with expected value gradients that change more-or-less linearly with time.  The "spaceship" indicating the current location on the "planet" always started at 12 o'clock as in the original task.  This version helped to work out the bugs of what was an already complicated task, and we did not know what the final form of clock_v2 was going to be yet.  I'd have to look back through the lab's slack history to see if we ever piloted this version in Prolific.
+
